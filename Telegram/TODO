@@ -1,0 +1,19 @@
+
+############
+# 텔레그램에서 검색, 제외, url 받아서 DB 저장
+# DB 조회해서 크롤링
+
+# 검색어 리스트 - 김철수Bot 알림 용도 - tb_alrm_alow_kewd_m
+
+# url, 키워드 제외 리스트 - 단독Bot 알림 용도 - tb_alrm_expt_kewd_m, tb_alrm_expt_url_m
+
+# 키워드 refresh Flag - 검색어용, 제외용
+
+# 기타 소스에서 쓸만한거 - 토큰, chatId, 스케줄링 주기 (테스트용:10, 서버용:60)
+
+# 켜놓는 주기
+
+#####
+# git?
+# docker?
+# 씨발 이건 어떻게?

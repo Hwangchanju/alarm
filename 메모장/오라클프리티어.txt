@@ -1,0 +1,41 @@
+■ 인스턴스 생성
+
+이미지 설정 - CentOS7
+
+SSH key 추가 - Paste public keys
+
+Boot volume - custom boot volume size - 50GB 설정
+
+■ 고정 IP 설정
+
+IP 생성 - instance details - Attached VNICs - 인스턴스명 - IPv4 Address - edit - No public IP 설정으로 초기화
+ - Reserved public IP로 IP 생성
+
+■ 포트 개방
+
+instance details - subnet 설정 - Security Lists 목록 - Add Ingress Rules
+- SOURCE CIDR(0.0.0.0/0), IP PROTOCOL(TCP), DESTINATION PORT RANGE(80, 443), DESCRIPTION(Service port for HTTP, HTTPS)
+- 설정
+
+■ 서버 접속(PuTTY)
+
+Connection > SSH > AUTH > ppk 파일 import
+Session > Host Name에 IP, 별칭 지정후 접속
+
+■ 백업(블록 볼륨)
+
+블록 볼륨 생성 - 연결된 인스턴스 - 인스턴스에 연결 - 상세 메뉴 ISCSI 명령 및 정보 복사
+- 복사한 명령어 입력 - sudo lsblk 명령어로 생성한 블록 볼륨 마운팅 여부 확인
+
+■ 블록 볼륨 포맷
+mkfs -t ext4 /dev/sdb(장치이름)
+
+mkdir -p /mnt/disks/sdb
+mount -o discard,defaults /dev/sdb /mnt/disks/sdb
+chmod a+w /mnt/disks/sdb
+
+blkid /dev/sdb - 장치 UUID, file system 확인
+
+vi /etc/fstab 편집
+UUID=UUID_VALUE /mnt/disks/sdb ext4 discard,defaults,nobootwait 0 2* _netdev 추가
+mount -all > df -h 마운트 여부 확인

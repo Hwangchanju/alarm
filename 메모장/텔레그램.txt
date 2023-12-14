@@ -1,0 +1,22 @@
+
+
+
+
+# Token
+# [단독]
+# '6428874186:AAGzAK9TqxPgiW7Zbw08GNvkSqAF4weCydY'
+# https://api.telegram.org/bot6428874186:AAGzAK9TqxPgiW7Zbw08GNvkSqAF4weCydY/getUpdates
+
+# BrianChoi
+# '2019958870:AAFfhFkGhXcSCPAi9p8Zz4B2jCYNtshCXCo'
+# https://api.telegram.org/bot2019958870:AAFfhFkGhXcSCPAi9p8Zz4B2jCYNtshCXCo/getUpdates
+
+
+
+### 텔레그램 ID(Seq)
+## 개인 ID
+chat_id = '1758525870' # 찬주
+# chat_id = '1725010456'
+## 채팅방
+# chat_id = '-1001686955890'    # develop
+# chat_id = '-1001855914048'    # master

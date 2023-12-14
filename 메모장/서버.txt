@@ -1,0 +1,36 @@
+■ CentOS7에 Python 3.6.x설치
+ - 필수 유틸리티 설치
+yum update
+yum install yum-utils
+yum groupinstall development
+ - Python 설치
+yum install -y https://repo.ius.io/ius-release-el7.rpm
+yum install -y python36u
+python3.6 -V
+ - pip 개발 패키지 설치
+yum install python36u-pip python36u-devel python36u-libs
+
+■ 가상환경(virtualenv) 만들기
+pip install virtualenv
+mkdir env
+source ./env/bin/activate
+이후 pip 패키지 설치
+deactivate - 가상화 환경 종료(다 끝나고 나서)
+
+■ 백그라운드 실행
+nohup [프로세스] & > nohup python3 test1.py &
+nohup [프로세스] 1>/dev/null 2>&1 & - nohup.out 프로그램 생성하지 않음
+
+파이썬 파일 작성 첫째줄(작성 해야 파이썬으로 동작)
+#!/usr/bin/env python3
+
+실행파일로 변환
+chmod u+x 파일명
+chmod 755
+
+실행
+./파일명
+
+
+username
+opc
